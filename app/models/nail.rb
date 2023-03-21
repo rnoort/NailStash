@@ -1,3 +1,3 @@
 class Nail < ApplicationRecord
-    belongs_to :brand
+  belongs_to :brand
 end

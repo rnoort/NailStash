@@ -1,3 +1,3 @@
 class Brand < ApplicationRecord
-    has_many :nails
+    has_many :nails, dependent: :destroy
 end
