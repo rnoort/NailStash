@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  brand: one
   code: 1
   color: MyString
   amount: 1
 
 two:
+  brand: two
   code: 1
   color: MyString
   amount: 1
