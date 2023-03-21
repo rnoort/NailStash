@@ -1,2 +1,96 @@
-<h1>Brands#index</h1>
-<p>Find me in app/views/brands/index.html.erb</p>
+<h1>Brands</h1>
+
+
+<div class="container" style="width: 100%;">
+    <div class="row">
+        <div class="col-11">
+            <table class="table" style="width: 100%;">
+                <thead>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Actions</th>
+                </thead>
+                <tbody>
+                    <% @brands.each do |brand| %>
+                        <tr>
+                            <th scope="row"><%= brand.id %></th>
+                            <td><%= brand.name %></td>
+                            <td><%= brand.nails.count %></td>
+                            <td>
+                                <%= button_to "Info", brand_path(brand), method: "get", :form => { :style => "display: inline"}, :class => "btn btn-primary"%>
+                                <%= button_to "Edit", edit_brand_path(brand), method: "get", :form => { :style => "display: inline"}, :class => "btn btn-success" %>
+                                <%= button_to "Delete", brand_path(brand), method: "delete", :form => { :style => "display: inline"}, :class => "btn btn-danger", data: {
+                                    turbo_method: :delete,
+                                    turbo_confirm: "Are you sure?"
+                                }%>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-1">
+            <%= button_to "Create", new_brand_path, method: "get", :form => { :style => "display: inline"}, :class => "btn btn-primary"%>
+        </div>
+    </div>
+</div>
+
+<!-- 
+<div class="container">
+    <div class="row">
+        <div class="col-9">
+            <table class="table" style="width: 100%;">
+                <thead>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Name</th>
+                </thead>
+                <tbody>
+                    <% @brands.each do |brand| %>
+                        <tr>
+                            <th scope="row"><%= brand.id %></th>
+                            <td><%= brand.name %></td>
+                            <td><%= brand.nails.count %></td>
+                            <td>Update</td>
+                            <td>Delete</td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-3">
+
+        </div>
+    </div>
+</div>
+-->
+<!--
+<div class="container" style="width: 100%;">
+    <table class="table" style="width: 100%;">
+        <thead>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Actions</th>
+        </thead>
+        <tbody>
+            <% @brands.each do |brand| %>
+                <tr>
+                    <th scope="row"><%= brand.id %></th>
+                    <td><%= brand.name %></td>
+                    <td><%= brand.nails.count %></td>
+                    <td>
+                        <button type="button" class="btn btn-primary"><box-icon name='show'></box-icon></button>
+                        <button type="button" class="btn btn-success"><box-icon name='edit'></box-icon></button>
+                        <button type="button" class="btn btn-danger"><box-icon name='trash'></box-icon></button>
+                    </td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
+
+-->
