@@ -1,0 +1,31 @@
+<%= form_with model: @nail do |form|%>
+    <div class="form-group">
+        <%= form.label :brand_id %>
+        <%= form.collection_select :brand_id, Brand.all, :id, :name, prompt: true %>
+    </div>
+    <div class="form-group">
+        <%= form.label :code %>
+        <%= form.number_field :code %>
+        <% @nail.errors.full_messages_for(:code).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :color %>
+        <%= form.text_field :color %>
+        <% @nail.errors.full_messages_for(:color).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div class="form-group">
+        <%= form.label :amount %>
+        <%= form.number_field :amount %>
+        <% @nail.errors.full_messages_for(:amount).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <%= form.submit %>
+<% end %>

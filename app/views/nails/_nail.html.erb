@@ -1,0 +1,15 @@
+ <tr>
+    <th scope="row"><%= nail.id %></th>
+    <td><%= nail.brand.name %></td>
+    <td><%= nail.code %></td>
+    <td><%= nail.color %></td>
+    <td><%= nail.amount %></td>
+    <td>
+        <%= button_to "Info", nail_path(nail), method: "get", :form => { :style => "display: inline"}, :class => "btn btn-primary"%>
+        <%= button_to "Edit", nail_path(nail), method: "get", :form => { :style => "display: inline"}, :class => "btn btn-success" %>
+        <%= button_to "Delete", nail_path(nail), method: "delete", :form => { :style => "display: inline"}, :class => "btn btn-danger", data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+        }%>
+    </td>
+</tr>
