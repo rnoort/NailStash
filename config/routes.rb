@@ -3,7 +3,7 @@
 
     # Defines the root path route ("/")
     # root "articles#index"
-    root "nails#index"
+    root "pages#index"
 
     resources :brands 
     resources :nails
