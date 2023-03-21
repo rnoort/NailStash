@@ -1,6 +1,5 @@
 <h1>Brands</h1>
 
-
 <div class="container" style="width: 100%;">
     <div class="row">
         <div class="col-11">
@@ -12,20 +11,20 @@
                     <th scope="col">Actions</th>
                 </thead>
                 <tbody>
-                    <% @brands.each do |brand| %>
-                        <tr>
-                            <th scope="row"><%= brand.id %></th>
-                            <td><%= brand.name %></td>
-                            <td><%= brand.nails.count %></td>
-                            <td>
-                                <%= button_to "Info", brand_path(brand), method: "get", :form => { :style => "display: inline"}, :class => "btn btn-primary"%>
-                                <%= button_to "Edit", edit_brand_path(brand), method: "get", :form => { :style => "display: inline"}, :class => "btn btn-success" %>
-                                <%= button_to "Delete", brand_path(brand), method: "delete", :form => { :style => "display: inline"}, :class => "btn btn-danger", data: {
-                                    turbo_method: :delete,
-                                    turbo_confirm: "Are you sure?"
-                                }%>
-                            </td>
-                        </tr>
+                    <% @brands.each do |brand|%>
+                    <tr>
+                        <th scope="row"><%= brand.id %></th>
+                        <td><%= brand.name %></td>
+                        <td><%= brand.nails.count %></td>
+                        <td>
+                            <%= button_to "Info", brand_path(brand), method: "get", :form => { :style => "display: inline"}, :class => "btn btn-primary"%>
+                            <%= button_to "Edit", edit_brand_path(brand), method: "get", :form => { :style => "display: inline"}, :class => "btn btn-success" %>
+                            <%= button_to "Delete", brand_path(brand), method: "delete", :form => { :style => "display: inline"}, :class => "btn btn-danger", data: {
+                                turbo_method: :delete,
+                                turbo_confirm: "Are you sure?"
+                            }%>
+                        </td>
+                    </tr>
                     <% end %>
                 </tbody>
             </table>
